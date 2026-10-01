@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Legal</title>
+
+  <!-- Bootstrap (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="container text-center my-4">
+    <h1 class="blog-title">Blog Legal</h1>
+    <p class="blog-subtitle">Postagens legais e interessantes</p>
+  </header>
+
+  <main class="container" style="max-width: 800px;">
+    <section id="articles-container" aria-label="Lista de artigos"></section>
+
+    <!-- Navegação da paginação -->
+    <nav id="pagination" class="d-flex justify-content-center gap-2 flex-wrap mt-4"
+         aria-label="Paginação"></nav>
+  </main>
+
+  <footer class="container text-center my-5">
+  </footer>
+
+
+  <!-- Template para artigo -->
+  <template id="article-template">
+    <article class="article-card card mb-4">
+      <div class="card-body">
+        <h2 class="article-title card-title"></h2>
+        <p class="article-content card-text"></p>
+
+        <section class="comments-section">
+          <h3>Comentários</h3>
+
+          <form class="comment-form row g-2 mb-3">
+            <div class="col-12">
+              <input type="text" class="comment-author form-control"
+                     placeholder="Seu nome" required>
+            </div>
+            <div class="col-12">
+              <textarea class="comment-text form-control"
+                        placeholder="Seu comentário" required></textarea>
+            </div>
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+            </div>
+          </form>
+
+          <ul class="comments-list list-unstyled"></ul>
+        </section>
+      </div>
+    </article>
+  </template>
+
+  <!-- Template para comentário -->
+  <template id="comment-template">
+    <li class="comment-item">
+      <strong class="comment-author-display"></strong>
+      <p class="comment-text-display"></p>
+      <button class="remove-comment" aria-label="Remover comentário">Remover</button>
+    </li>
+  </template>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

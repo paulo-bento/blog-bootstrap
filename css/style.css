@@ -1,0 +1,175 @@
+:root {
+  --bg-color: #f6f5f4;
+  --card-bg: #ffffff;
+  --border-color: #d4d4d4;
+  --text-primary: #2e3436;
+  --text-secondary: #5e5c64;
+  --accent-blue: #3584e4;
+  --accent-hover: #1c71d8;
+  --danger: #e01b24;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --bs-primary: var(--accent-blue);
+  --bs-primary-rgb: 53, 132, 228;
+  --bs-body-bg: var(--bg-color);
+  --bs-body-color: var(--text-primary);
+  --bs-border-color: var(--border-color);
+  --bs-border-radius: var(--radius);
+  --bs-link-color: var(--accent-blue);
+  --bs-link-hover-color: var(--accent-hover);
+}
+
+/* Base */
+body {
+  background-color: var(--bg-color);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Cantarell,
+               'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Header */
+.blog-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.blog-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Cards de artigo */
+.article-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+
+.article-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.article-content {
+  color: var(--text-secondary);
+}
+
+/* Seção de comentários */
+.comments-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+.comments-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Ajustes visuais nos inputs do Bootstrap */
+.form-control {
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 0.2rem rgba(53, 132, 228, 0.25);
+}
+
+/* Botão primário customizado */
+.btn-primary {
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  border-radius: 8px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Lista de comentários */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment-item {
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.comment-author-display {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.comment-text-display {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  white-space: pre-wrap;
+}
+
+.remove-comment {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.remove-comment:hover {
+  color: #a51d2d;
+}
+
+/* Paginação */
+#pagination button {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+#pagination button:hover:not(:disabled) {
+  background-color: #e8e8e8;
+}
+
+#pagination button.active {
+  background-color: var(--accent-blue);
+  color: #fff;
+  border-color: var(--accent-blue);
+}
+
+#pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .blog-title { font-size: 1.8rem; }
+  .article-title { font-size: 1.3rem; }
+  .article-card .card-body { padding: 16px; }
+}
